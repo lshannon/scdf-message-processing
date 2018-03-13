@@ -20,6 +20,24 @@ http post --target https://clouqa-dataflow-server-ok8lm7b-words-http.cfapps.io/ 
 
 ```
 
+A Spring Boot component can be created to produce messages.
+
+```shell
+
+@Bean
+	public CommandLineRunner init(RestTemplate template) {
+		return (args) -> {
+		
+			
+			for (int i = 0; i < 10000; i++) {
+				HttpEntity<String> payload = new HttpEntity<String>("A letter for you sir! : " + i);
+				template.postForLocation("https://clouqa-dataflow-server-ok8lm7b-m2-http.cfapps.io/", payload);				
+			}
+		};
+	}
+
+```
+
 ## Adding Custom Transformation
 
 Deploy the repository application with the transformer package. Then register the service.
