@@ -16,7 +16,7 @@ We can test the stream.
 
 ```shell
 
-http post --target https://clouqa-dataflow-server-ok8lm7b-words-http.cfapps.io/ --date "Hello World"
+http post --target https://clouqa-dataflow-server-ok8lm7b-words-http.cfapps.io/ --data "Hello World"
 
 ```
 
