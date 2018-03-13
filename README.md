@@ -68,6 +68,16 @@ stream create --name d --definition ":db > jdbc --driver-class-name=org.postgres
 
 ```
 
+## Update the Stream to Use Routes
+
+Now let's send the data to the appropriate stream using the routing key the processor added.
+
+```shell
+
+stream create m2 --definition "http | simple-message-processor | rabbit --routing-key-expression=#jsonPath(payload,'$.routingKey') --exchange-expression=#jsonPath(payload,'$.routingKey')" --deploy
+
+```
+
 
 
 
