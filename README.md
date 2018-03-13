@@ -46,7 +46,7 @@ Lets create the streams for routing.
 
 stream create --name l --definition ":log > log" --deploy
 
-stream create --name d --definition ":db > jdbc --driver-class-name=org.postgresql.Driver --username=zggecdgv --password=WjyVASG9nF2RPNnAqpwqgxNbarCipyJA --url=jdbc:postgresql://stampy.db.elephantsql.com:5432/zggecdgv --jdbc.initialize=true" --deploy
+stream create --name d --definition ":db > jdbc --driver-class-name=org.postgresql.Driver --username=xxxxxx --password=xxxxxxx --url=jdbc:postgresql://stampy.db.elephantsql.com:5432/xxxxxx --jdbc.initialize=true --spring.datasource.maxActive=2 --spring.datasource.tomcat.max-active=2" --deploy
 
 ```
 
